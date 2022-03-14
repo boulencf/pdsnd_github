@@ -10,7 +10,9 @@ NumPy and Pandas libraries have been used to complete different parts of the pro
 
 ### Files used
 Database is based on several .csv files :
-chicago.csv, new_york.csv, washington.csv
+chicago.csv, 
+new_york.csv, 
+washington.csv
 
 ### Credits
 Web source used :
