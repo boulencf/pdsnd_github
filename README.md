@@ -1,17 +1,21 @@
->**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
-
 ### Date created
-Include the date you created this project and README file.
+2022/03/14 (yyyy/mm/dd)
 
 ### Project Title
-Replace the Project Title
+Explore US Bikeshare data
 
 ### Description
-Describe what your project is about and what it does
+Python application that imports US bike share data and answer interesting questions about it by computing descriptive statistics. The script takes in raw input to create an interactive experience in the terminal to present these statistics
 
 ### Files used
-Include the files used
+Database is based on several .csv files :
+chicago.csv, new_york.csv, washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+Web source used :
+Module converting seconds to day, hour, minutes and seconds
+https://www.w3resource.com/python-exercises/python-basic-exercise-65.php
+
+Print x rows at a time keeping them properly aligned :
+https://stackoverflow.com/questions/64634852/python-pandas-print-10-rows-at-a-time-while-keeping-them-properly-aligned
 
