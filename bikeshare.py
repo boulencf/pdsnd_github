@@ -1,3 +1,4 @@
+#import section
 import time
 import pandas as pd
 import numpy as np
@@ -5,7 +6,7 @@ import numpy as np
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
-
+#Subroutine getting user's inputs
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -61,6 +62,7 @@ def get_filters():
     print('_'*80)
     return city, month, day
 #--------------------------------------------------------------------------------------------------------
+#Subroutine loading the data
 def load_data(city, month, day):
     """
     Loads data for the specified city and filters by month and day if applicable.
@@ -98,6 +100,7 @@ def load_data(city, month, day):
         df = df[df['day_of_week'] == day]
     return df
 #-------------------------------------------------------------------------------------------------
+#Subroutine calculating time statistics
 def time_stats(df,month,day):
     """Displays statistics on the most frequent times of travel."""
 
@@ -129,6 +132,7 @@ def time_stats(df,month,day):
     print("This took %s seconds." % (time.time() - start_time))
     print('-'*80)
 #----------------------------------------------------------------------------------------------------    
+#Subroutine calculating stations stats  
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
 
@@ -163,6 +167,7 @@ def convert(seconds):
       
     return "d:h:m:s-> %d:%d:%d:%d" % (day, hour, minutes, seconds)    
 #----------------------------------------------------------------------------------------------------   
+#Subroutine calculating trip duration stats
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
     print('Calculating Trip Duration...\n')
