@@ -9,6 +9,17 @@ In this project, we make use of Python to explore data related to bike share sys
 Python application imports US bike share data and answer interesting questions about it by computing descriptive statistics. The script takes in raw input to create an interactive experience in the terminal to present these statistics.
 NumPy and Pandas libraries have been used to complete different parts of the project.
 
+Application architecture:
+------------------------
+#Subroutine getting user's inputs
+#Subroutine loading the data
+#Subroutine calculating time statistics
+#Subroutine calculating stations stats 
+#routine to convert seconds in days, hours, minutes and seconds 
+#Subroutine calculating trip duration stats
+#Raw data displayed upon request by the user (5 row at a time)
+#Main program
+
 ### Files used
 Database is based on several .csv files :
 chicago.csv, 
