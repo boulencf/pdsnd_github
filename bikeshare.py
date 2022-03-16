@@ -114,18 +114,18 @@ def time_stats(df,MONTH,DAY):
     
     # display the most common day of week (only when all days selected)
     if DAY =='all':
-        most_common_day= df['day_of_week'].mode()[0]
+        MOST_COMMON_DAY= df['day_of_week'].mode()[0]
         DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','Sunday']
-        most_common_day=DAYS[most_common_day-1]
-        print("The most Popular day is",most_common_day)
+        MOST_COMMON_DAY=DAYS[MOST_COMMON_DAY-1]
+        print("The most Popular day is",MOST_COMMON_DAY)
         print("This took %s seconds." % (time.time() - start_time))
         print('-'*80)
 
     # display the most common start hour
     # before we need to extract hour from the Start Time column to create an hour column
     df['Start Hour'] =df['Start Time'].dt.hour
-    most_common_hour=df['Start Hour'].mode()[0]
-    print('The most Frequent Start Hour: {} h'.format(most_common_hour))
+    MOST_COMMON_HOUR=df['Start Hour'].mode()[0]
+    print('The most Frequent Start Hour: {} h'.format(MOST_COMMON_HOUR))
     print("This took %s seconds." % (time.time() - start_time))
     print('-'*80)
 #----------------------------------------------------------------------------------------------------    
@@ -136,18 +136,18 @@ def station_stats(df):
     start_time = time.time()
 
     # display most commonly used start station
-    most_common_start_station= df['Start Station'].mode()[0]
-    print("The most popular Start Station is {}".format(most_common_start_station))
+   MOST_COMMON_START_STATION= df['Start Station'].mode()[0]
+    print("The most popular Start Station is {}".format(MOST_COMMON_START_STATION))
 
     # display most commonly used end station
-    most_common_end_station= df['End Station'].mode()[0]
-    print("The most popular end Station is {}".format(most_common_end_station))
+    MOST_COMMON_END_STATION= df['End Station'].mode()[0]
+    print("The most popular end Station is {}".format(MOST_COMMON_END_STATION))
 
     # display most frequent combination of start station and end station trip
     # create combination of start station and end station trip column first
     df['Start_End_Station']=df['Start Station']+"-->"+ df['End Station']
-    most_popular_StartEnd_Station= df['Start_End_Station'].mode()[0]
-    print("The most frequent combination of Start and End Station is {} ".format(most_popular_StartEnd_Station))
+    MOST_POPULAR_STARTEND_STATION= df['Start_End_Station'].mode()[0]
+    print("The most frequent combination of Start and End Station is {} ".format(MOST_POPULAR_STARTEND_STATION))
 
     print("This took %s seconds." % (time.time() - start_time))
     print('-'*80)
@@ -169,14 +169,14 @@ def trip_duration_stats(df):
     start_time = time.time()
 
     # display total travel time
-    total_trip_duration=df['Trip Duration'].sum()
-    print("The total travel time in seconds :",total_trip_duration)
-    print("The total travel time : {} ".format(convert(total_trip_duration)))
+    TOTAL_TRIP_DURATION=df['Trip Duration'].sum()
+    print("The total travel time in seconds :",TOTAL_TRIP_DURATION)
+    print("The total travel time : {} ".format(convert(TOTAL_TRIP_DURATION)))
 
     # display mean travel time
-    mean_travel_time=df['Trip Duration'].mean()
-    print("The mean travel time in seconds : ",mean_travel_time)
-    print("The mean travel time : ",convert(mean_travel_time))
+    MEAN_TRAVEL_TIME=df['Trip Duration'].mean()
+    print("The mean travel time in seconds : ",MEAN_TRAVEL_TIME)
+    print("The mean travel time : ",convert(MEAN_TRAVEL_TIME))
     
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*80)
@@ -188,21 +188,21 @@ def user_stats(df,CITY):
     start_time = time.time()
 
     # Display counts of user types
-    count_user_type= df['User Type'].value_counts()
-    print("counts of user types : ",count_user_type)
+    COUNT_USER_TYPE= df['User Type'].value_counts()
+    print("counts of user types : ",COUNT_USER_TYPEe)
 
     # Display counts of gender / valid only for Chicago and NYC
     if CITY == 'chicago' or CITY == 'new york city':
-        count_gender= df['Gender'].value_counts()
-        print("counts of gender :",count_gender)
+        COUNT_GENDER= df['Gender'].value_counts()
+        print("counts of gender :",COUNT_GENDER)
       
     # Display earliest, most recent, and most common year of birth
-        earliest_birth= int(df['Birth Year'].min())
-        print("date of birth of the oldest end-user ",earliest_birth)
-        most_recent_birth= int(df['Birth Year'].max())
-        print("date of birth of the youngest end-user",most_recent_birth)
-        most_common_birth= int(df['Birth Year'].mode()[0])
-        print("Most users are born of the year",most_common_birth)
+        EARLIEST_BIRTH= int(df['Birth Year'].min())
+        print("date of birth of the oldest end-user ",EARLIEST_BIRTH)
+        MOST_RECENT_BIRTH= int(df['Birth Year'].max())
+        print("date of birth of the youngest end-user",MOST_RECENT_BIRTH)
+        MOST_COMMON_BIRTH= int(df['Birth Year'].mode()[0])
+        print("Most users are born of the year",MOST_COMMON_BIRTH)
     else :print("gender info not available for this city")    
 
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -210,28 +210,28 @@ def user_stats(df,CITY):
 #----------------------------------------------------------------------------------------------------        
 #Raw data displayed upon request by the user (5 row at a time)
 def Raw_data_display(df):
-    start_row = 0
-    end_row = 5
-    last_row = df.shape[0]
-    print('\nTotal number of row in the raw data selected : ',last_row)
+    START_ROW = 0
+    END_ROW = 5
+    LAST_ROW = df.shape[0]
+    print('\nTotal number of row in the raw data selected : ',LAST_ROW)
 
     print("Wana have a look into raw data (5 rows)? : 'y' or any other key to exit\n")
-    user_input= input("  -->  ").lower()
-    if user_input=='y':
-        print((df[start_row:end_row]).to_string(index=False))
+    USER_INPUT_1st= input("  -->  ").lower()
+    if USER_INPUT_1st=='y':
+        print((df[START_ROW:END_ROW]).to_string(index=False))
         #while True: #using while loop and track the row index in order to display the continuous raw data
-        while True and end_row <= last_row:
+        while True and END_ROW <= LAST_ROW:
          print("Wanna see 5 more rows? : 'y' or any other key to exit")   
-         user_input2= input("  -->  ").lower()   
-         if user_input2=='y':
+         USER_INPUT_n= input("  -->  ").lower()   
+         if USER_INPUT_n=='y':
             # Deletes the question after "yes" input to make a more readable list
             print("\033[A                             \033[A")
-            start_row += 5
-            end_row += 5
-            if end_row <= last_row:
+            START_ROW += 5
+            END_ROW += 5
+            if END_ROW <= LAST_ROW:
               # Deletes the question after "yes" input to make a more readable list   
               print("\033[A                             \033[A")  
-              print((df[start_row:end_row]).to_string(index=False, header=False))
+              print((df[START_ROW:END_ROW]).to_string(index=False, header=False))
             else:
               print("\nEnd of List reached\n")
          else:
